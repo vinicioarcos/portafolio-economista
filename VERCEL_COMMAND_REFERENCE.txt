@@ -1,0 +1,238 @@
+================================================================================
+  🚀 REFERENCIA DE COMANDOS - DESPLEGAR EN VERCEL
+================================================================================
+
+TIEMPO TOTAL: 15 MINUTOS
+
+================================================================================
+  PASO 1: ABRIR TERMINAL EN LA CARPETA DEL PROYECTO (1 min)
+================================================================================
+
+Opción A: Abre PowerShell o CMD y ejecuta:
+
+  cd "C:\Users\vinic\OneDrive\Escritorio\PROYECTOS\PORTAFOLIO_PROFESIONAL\PORTAFOLIO_ECONOMISTA"
+
+Opción B: Haz clic derecho en la carpeta del proyecto → "Open in Terminal"
+
+================================================================================
+  PASO 2: INICIALIZAR GIT (3 minutos)
+================================================================================
+
+Copia y pega EXACTAMENTE estos comandos en orden:
+
+  git init
+
+  git config user.name "Edwin Vinicio Arcos"
+
+  git config user.email "vinicioarcos123@gmail.com"
+
+  git add .
+
+  git commit -m "Initial commit: Portafolio profesional v1.0"
+
+Deberías ver algo como:
+  [master (root-commit) abc1234] Initial commit...
+  XX files changed, XXXXX insertions(+)
+
+================================================================================
+  PASO 3: CREAR REPOSITORIO EN GITHUB (5 minutos)
+================================================================================
+
+1. Abre https://github.com/new en tu navegador
+
+2. Completa así:
+   Repository name:  portafolio-economista
+   Description:      Portafolio profesional de economista
+   Visibility:       ✅ Public
+   (Deja todo lo demás en blanco)
+
+3. Click "Create repository"
+
+4. GitHub mostrará estos comandos (CÓPIALOS):
+   git remote add origin https://github.com/TU_USUARIO/portafolio-economista.git
+   git branch -M main
+   git push -u origin main
+
+================================================================================
+  PASO 4: CONECTAR A GITHUB (2 minutos)
+================================================================================
+
+Vuelve a tu terminal y pega estos 3 comandos:
+
+  git remote add origin https://github.com/TU_USUARIO/portafolio-economista.git
+
+  git branch -M main
+
+  git push -u origin main
+
+IMPORTANTE: Reemplaza TU_USUARIO con tu username de GitHub
+
+Ejemplo:
+  git remote add origin https://github.com/vinicio-arcos/portafolio-economista.git
+  git branch -M main
+  git push -u origin main
+
+Si te pide autenticación, una ventana en el navegador se abrirá (sigue las instrucciones)
+
+Verás:
+  Enumerating objects: ...
+  ...
+  Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+================================================================================
+  PASO 5: DESPLEGAR EN VERCEL (4 minutos)
+================================================================================
+
+1. Abre https://vercel.com/new en tu navegador
+
+2. Si es tu primera vez:
+   - Click "Continue with GitHub"
+   - Autoriza a Vercel
+
+3. Busca tu repositorio:
+   Escribe: portafolio-economista
+   Click en "Import"
+
+4. Configuración automática:
+   (Vercel detecta Next.js automáticamente)
+   - Framework: Next.js ✓
+   - Root Directory: ./ ✓
+   - Build Command: npm run build ✓
+   - Output Directory: .next ✓
+
+5. Click "Deploy"
+
+6. ESPERA 2-3 MINUTOS
+
+   Verás: "Deployment successful"
+   Tu URL será: https://portafolio-economista.vercel.app
+
+================================================================================
+  ✅ ¡TU SITIO ESTÁ EN VIVO!
+================================================================================
+
+URL: https://portafolio-economista.vercel.app
+
+Comparte con:
+- LinkedIn
+- CV
+- Perfil de GitHub
+- Clientes potenciales
+- Redes sociales
+
+================================================================================
+  📝 HACER CAMBIOS EN EL FUTURO
+================================================================================
+
+Cuando hagas cambios en tu código:
+
+  git add .
+  git commit -m "Tu descripción del cambio"
+  git push
+
+Vercel se actualizará automáticamente en 1-2 minutos.
+
+================================================================================
+  🆘 SOLUCIÓN RÁPIDA DE PROBLEMAS
+================================================================================
+
+"git is not recognized"
+→ Descarga https://git-scm.com/download/windows
+
+"fatal: not a git repository"
+→ Verifica que estés en la carpeta correcta con: cd "C:\Users\..."
+
+"Permission denied (publickey)"
+→ En vez de SSH, usa HTTPS:
+   git remote set-url origin https://github.com/TU_USUARIO/portafolio-economista.git
+
+El build falla en Vercel
+→ Mira los logs en tu proyecto de Vercel (Deployments → ver error)
+
+================================================================================
+  📊 VERCEL DASHBOARD
+================================================================================
+
+Después de desplegar, puedes acceder a:
+
+https://vercel.com/dashboard
+
+Ahí verás:
+- Deployments realizados
+- Logs de compilación
+- Analytics (visitas, países, etc.)
+- Configuración del proyecto
+- Dominio personalizado (opcional)
+
+================================================================================
+  🎯 VERIFICACIÓN FINAL
+================================================================================
+
+Después del deployment, verifica:
+
+1. ✅ Accede a tu URL en el navegador
+2. ✅ Verifica que todas las secciones se carguen
+3. ✅ Comprueba que se vea bien en móvil
+4. ✅ Prueba los links de contacto
+5. ✅ Comparte la URL con tu red
+
+================================================================================
+  📋 CHECKLIST RÁPIDO
+================================================================================
+
+Antes de empezar:
+☐ Git instalado (comprueba con: git --version)
+☐ Cuenta de GitHub creada
+☐ Cuenta de Vercel creada
+☐ Carpeta del proyecto a mano
+
+Durante el proceso:
+☐ Paso 1: Git init y commit
+☐ Paso 2: Crear repositorio en GitHub
+☐ Paso 3: git remote add origin y push
+☐ Paso 4: Importar en Vercel
+☐ Paso 5: Click Deploy
+
+Después:
+☐ Esperar 2-3 minutos
+☐ Ver "Deployment successful"
+☐ Acceder a la URL
+☐ Compartir con tu red
+
+================================================================================
+  ⏱️ RESUMEN TEMPORAL
+================================================================================
+
+Paso 1 - Inicializar Git:           3 minutos
+Paso 2 - Crear repositorio GitHub:  5 minutos
+Paso 3 - Conectar a GitHub:         2 minutos
+Paso 4 - Desplegar en Vercel:       3-4 minutos
+Esperar a que se compile:           2-3 minutos
+
+TOTAL:                              15-20 minutos
+
+================================================================================
+  🎉 RESULTADO FINAL
+================================================================================
+
+Tu portafolio estará:
+✅ En GitHub (versionado, respaldado, public)
+✅ En Vercel (deployed, con SSL, CDN global)
+✅ En Internet (accesible desde cualquier lugar)
+✅ Con actualizaciones automáticas
+✅ Con analytics
+✅ Listo para captar oportunidades
+
+================================================================================
+
+¿LISTO PARA EMPEZAR?
+
+1. Lee DEPLOY_VERCEL.md (guía detallada)
+2. Abre tu terminal en la carpeta del proyecto
+3. Ejecuta los comandos de este archivo
+4. ¡Tu sitio estará en vivo en 15 minutos!
+
+================================================================================
+Última actualización: Mayo 3, 2026
+Versión: 1.0
+================================================================================
