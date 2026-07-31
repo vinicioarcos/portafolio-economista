@@ -40,4 +40,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run npm audit
-        run: npm audit --production
+        run: npm audit --production --audit-level=critical
