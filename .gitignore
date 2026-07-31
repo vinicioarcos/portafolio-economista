@@ -2,7 +2,6 @@
 node_modules
 /.pnp
 .pnp.js
-package-lock.json
 yarn.lock
 
 # Testing
@@ -43,3 +42,4 @@ Thumbs.db
 # Cache
 .next
 .turbo
+*.tsbuildinfo
