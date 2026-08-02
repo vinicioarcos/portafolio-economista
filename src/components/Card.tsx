@@ -17,14 +17,23 @@ export function Card({
   href,
   variant = "default"
 }: CardProps) {
+  const isInteractive = Boolean(href);
+  const baseByVariant =
+    variant === "featured"
+      ? "border-copper/30 bg-gradient-to-br from-white/95 to-sand/50 p-6 shadow-accent"
+      : variant === "publication"
+        ? "border-slate-200/60 bg-white/70 p-6 shadow-panel"
+        : "border-white/70 bg-white/80 p-6 shadow-panel backdrop-blur";
+  const hoverByVariant = variant === "featured"
+    ? "hover:shadow-lg hover:-translate-y-1 hover:border-copper/60"
+    : variant === "publication"
+      ? "hover:shadow-lg hover:-translate-y-1 hover:border-petrol/30"
+      : "hover:shadow-lg hover:-translate-y-1 hover:border-petrol/20";
+
   const content = (
     <article
-      className={`group relative h-full overflow-hidden rounded-2xl border transition duration-300 ${
-        variant === "featured"
-          ? "border-copper/30 bg-gradient-to-br from-white/95 to-sand/50 p-6 shadow-accent hover:shadow-lg hover:-translate-y-1 hover:border-copper/60"
-          : variant === "publication"
-            ? "border-slate-200/60 bg-white/70 p-6 shadow-panel hover:shadow-lg hover:-translate-y-1 hover:border-petrol/30"
-            : "border-white/70 bg-white/80 p-6 shadow-panel backdrop-blur hover:shadow-lg hover:-translate-y-1 hover:border-petrol/20"
+      className={`relative h-full overflow-hidden rounded-2xl border transition duration-300 ${baseByVariant} ${
+        isInteractive ? `group ${hoverByVariant}` : ""
       }`}
     >
       <div className="relative flex items-start justify-between gap-4">
@@ -35,7 +44,7 @@ export function Card({
           ) : null}
         </div>
         {meta ? (
-          <span className="shrink-0 rounded-full bg-copper/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-copper">
+          <span className="shrink-0 rounded-full bg-copper/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-copperdark">
             {meta}
           </span>
         ) : null}
@@ -61,7 +70,7 @@ export function Card({
   if (href) {
     return (
       <a
-        className="block h-full transition-transform"
+        className="block h-full rounded-2xl transition-transform focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
         href={href}
         rel="noreferrer"
         target="_blank"

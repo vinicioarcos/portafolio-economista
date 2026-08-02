@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Manrope } from "next/font/google";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   title: "Vinicio Arcos | Economista",
@@ -14,7 +21,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="es">
+    <html className={manrope.variable} lang="es">
       <body>{children}</body>
     </html>
   );

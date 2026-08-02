@@ -6,7 +6,7 @@ export function ContactCTA() {
       <div className="grid gap-8 md:grid-cols-[1.4fr_0.6fr] md:items-end">
         <div className="space-y-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-copper">Contacto</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-copperlight">Contacto</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
               Conversemos sobre análisis, estrategia y formación económica
             </h2>
@@ -20,13 +20,13 @@ export function ContactCTA() {
 
         <div className="space-y-3 rounded-2xl border border-copper/20 bg-white/5 p-6 backdrop-blur-sm">
           <a
-            className="block text-sm font-semibold text-copper transition hover:text-copperlight"
+            className="block rounded text-sm font-semibold text-copperlight transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
             href={`mailto:${profile.email}`}
           >
             {profile.email}
           </a>
           <a
-            className="block text-xs text-slate-400 transition hover:text-slate-200"
+            className="block rounded text-xs text-slate-400 transition hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
             href={profile.linkedin}
             rel="noreferrer"
             target="_blank"
@@ -34,7 +34,7 @@ export function ContactCTA() {
             LinkedIn →
           </a>
           <a
-            className="mt-4 inline-flex rounded-full bg-copper px-5 py-3 text-sm font-bold text-charcoal transition hover:bg-copperlight hover:shadow-accent"
+            className="mt-4 inline-flex rounded-full bg-copper px-5 py-3 text-sm font-bold text-charcoal transition hover:bg-copperlight hover:shadow-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             href={`mailto:${profile.email}`}
           >
             Solicitar consulta

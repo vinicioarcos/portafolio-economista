@@ -13,6 +13,7 @@ const config: Config = {
         petrolight: "#1a8b8b", // Azul petróleo claro
         copper: "#b87333", // Cobre/dorado
         copperlight: "#d4a574", // Cobre claro
+        copperdark: "#8f5a26", // Cobre oscuro, uso en texto sobre fondos claros (WCAG AA)
         mist: "#e2e8f0", // Gris claro
         sand: "#f8fafc", // Blanco/arena clara
         cream: "#faf9f7", // Crema

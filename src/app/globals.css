@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: "Manrope";
   --background: #faf9f7;
   --foreground: #0f172a;
   --petrol: #0d5a5a;

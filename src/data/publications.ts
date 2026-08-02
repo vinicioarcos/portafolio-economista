@@ -1,47 +1,29 @@
 export const publications = [
   {
-    title: "Panorama económico y competitividad territorial",
-    publisher: "Revista de Análisis Regional",
-    year: "2025",
+    title: "Políticas Estatales: Una mirada hacia la inserción laboral y empleabilidad de Bachilleres Rurales",
+    publisher: "Revista Mapa",
+    year: "2020",
     summary:
-      "Artículo orientado a explicar cómo combinar indicadores de productividad, empleo y entorno institucional para apoyar decisiones de desarrollo local y competitividad regional.",
-    topics: ["Competitividad", "Territorio", "Indicadores", "Desarrollo local"],
-    href: "https://example.com/publicacion-1"
+      "Estudio de método mixto con análisis de regresión lineal sobre la inserción laboral de bachilleres técnicos agropecuarios en zonas rurales. Evidencia una relación inversa entre colocación laboral y empleabilidad, atribuible a baja remuneración y satisfacción laboral, y propone mejorar la alineación entre educación técnica y demanda del mercado.",
+    topics: ["Empleabilidad", "Educación técnica", "Política pública", "Zona rural"],
+    href: "https://revistamapa.org/index.php/es/article/view/186"
   },
   {
-    title: "Evaluación económica de programas de apoyo productivo",
-    publisher: "Centro de Estudios Aplicados",
-    year: "2024",
+    title: "Impacto de la oferta educativa superior en la búsqueda de talento humano por parte de las empresas",
+    publisher: "Magazine de las Ciencias: Revista de Investigación e Innovación",
+    year: "2020",
     summary:
-      "Documento técnico enfocado en metodologías para revisar eficiencia, cobertura y sostenibilidad de intervenciones sectoriales de fomento económico.",
-    topics: ["Evaluación", "Programas públicos", "Política pública", "Metodología"],
-    href: "https://example.com/publicacion-2"
+      "Análisis econométrico con cuatro modelos de regresión sobre la base de datos de empleo de Ecuador. Muestra que la oferta educativa superior tiende a concentrar profesionales en grandes empresas, limitando el acceso de pequeñas y medianas empresas a talento calificado, y sugiere diversificar la oferta académica hacia más sectores económicos.",
+    topics: ["Educación superior", "Mercado laboral", "Econometría", "Empresas"],
+    href: "https://revistas.utb.edu.ec/index.php/magazine/article/view/462"
   },
   {
-    title: "Economía laboral en contextos de cambio tecnológico",
-    publisher: "Journal de Economía Aplicada",
-    year: "2024",
+    title: "Análisis de la brecha salarial de género en Ecuador: una descomposición cuantílica con datos de la Enemdu 2024",
+    publisher: "Innova Science Journal",
+    year: "2026",
     summary:
-      "Análisis de efectos del cambio tecnológico sobre empleo, salarios y competencias laborales. Énfasis en políticas públicas de formación y transición laboral.",
-    topics: ["Economía laboral", "Tecnología", "Políticas de empleo", "Educación"],
-    href: "https://example.com/publicacion-3"
-  },
-  {
-    title: "Retorno de la educación en Ecuador: nuevas evidencias",
-    publisher: "Estudios Socioeconómicos",
-    year: "2023",
-    summary:
-      "Estudio econométrico que cuantifica el retorno privado y social de la inversión en educación según nivel, género y contexto territorial.",
-    topics: ["Educación", "Retorno", "Econometría", "Análisis socioeconómico"],
-    href: "https://example.com/publicacion-4"
-  },
-  {
-    title: "Políticas públicas e inclusión: evaluación de impacto en mercados laborales",
-    publisher: "Revista de Política Pública",
-    year: "2023",
-    summary:
-      "Síntesis de evidencia sobre efectividad de programas de inclusión laboral, capacitación y emprendimiento en reducción de desigualdad y generación de oportunidades.",
-    topics: ["Inclusión", "Empleo", "Evaluación de impacto", "Política pública"],
-    href: "https://example.com/publicacion-5"
+      "Descomposición cuantílica con corrección de sesgo de selección de Heckman sobre 114.960 trabajadores de 25 a 64 años (Enemdu 2024). Documenta una penalización salarial femenina de 30,9% tras controlar por características observables, con un patrón de \"piso pegajoso\" que alcanza 45,3% en el decil más bajo y desciende a 19,7% en el más alto.",
+    topics: ["Brecha salarial", "Género", "Econometría", "Mercado laboral"],
+    href: "https://innovasciencejournal.omeditorial.com/index.php/home/article/view/218"
   }
 ];

@@ -2,6 +2,7 @@ import { Card } from "@/components/Card";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { MetricsStats } from "@/components/MetricsStats";
 import { Navbar } from "@/components/Navbar";
 import { SectionTitle } from "@/components/SectionTitle";
 import { courses } from "@/data/courses";
@@ -36,24 +37,12 @@ export default function HomePage() {
               title="Economía aplicada con enfoque en decisiones concretas"
               description={profile.about}
             />
-            <div className="grid gap-4 sm:grid-cols-3">
-              {profile.metrics.map((metric) => (
-                <div
-                  className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white/60 to-sand/40 px-5 py-4 shadow-subtle"
-                  key={metric.label}
-                >
-                  <p className="text-3xl font-bold text-charcoal">{metric.value}</p>
-                  <p className="mt-1 text-xs font-medium uppercase tracking-[0.1em] text-slate-600">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <MetricsStats metrics={profile.metrics} />
           </div>
 
           <div className="flex items-center">
             <div className="w-full rounded-3xl bg-gradient-to-br from-petroldark to-charcoal p-8 text-white shadow-accent">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-copper">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-copperlight">
                 Áreas clave
               </p>
               <ul className="mt-5 space-y-2">
@@ -79,7 +68,7 @@ export default function HomePage() {
           {profile.specializations.map((spec) => (
             <div
               key={spec}
-              className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-subtle transition hover:shadow-lg hover:border-petrol/30"
+              className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-subtle"
             >
               <p className="text-sm font-semibold text-charcoal">{spec}</p>
             </div>
@@ -115,7 +104,7 @@ export default function HomePage() {
           title="Investigación y pensamiento aplicado"
           description="Selección de trabajos, artículos y reportes orientados a debate técnico, evidencia académica y aporte a políticas públicas."
         />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {publications.map((publication) => (
             <Card
               key={publication.title}
@@ -154,11 +143,21 @@ export default function HomePage() {
 
       {/* Sección Cursos y Talleres */}
       <section className="section-shell section-spacing" id="cursos">
-        <SectionTitle
-          eyebrow="Cursos y talleres"
-          title="Formación ejecutiva y académica"
-          description="Programas diseñados para desarrollar criterio analítico, lectura de datos, métodos cuantitativos y capacidad de decisión estratégica."
-        />
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionTitle
+            eyebrow="Cursos y talleres"
+            title="Formación ejecutiva y académica"
+            description="Programas diseñados para desarrollar criterio analítico, lectura de datos, métodos cuantitativos y capacidad de decisión estratégica."
+          />
+          <a
+            className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-petrol px-5 py-3 text-sm font-semibold text-petrol transition hover:bg-petrol/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+            href="https://www.arcdataconsulting.com/app/campus/courses/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Ver todos los cursos ↗
+          </a>
+        </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
             <Card
@@ -184,7 +183,7 @@ export default function HomePage() {
           {tools.map((tool) => (
             <div
               key={tool.name}
-              className="rounded-2xl border border-slate-200/60 bg-white/70 p-5 shadow-subtle transition hover:shadow-lg hover:border-petrol/30 hover:bg-accentSoft/10"
+              className="rounded-2xl border border-slate-200/60 bg-white/70 p-5 shadow-subtle"
             >
               <p className="font-semibold text-charcoal">{tool.name}</p>
               <p className="mt-2 text-xs text-slate-600">{tool.description}</p>

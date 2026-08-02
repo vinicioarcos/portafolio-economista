@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { profile } from "@/data/profile";
 
 export function Hero() {
@@ -6,7 +8,7 @@ export function Hero() {
       <div className="grid items-center gap-8 rounded-[2rem] border border-white/70 bg-gradient-to-br from-white/85 to-sand/50 px-8 py-10 shadow-panel backdrop-blur md:grid-cols-[1.3fr_0.7fr] md:px-12 md:py-14">
         <div className="space-y-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-copper">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-copperdark">
               {profile.kicker}
             </p>
             <p className="mt-1 text-xs uppercase tracking-[0.2em] text-slate-500">
@@ -19,41 +21,51 @@ export function Hero() {
             </h1>
             <p className="max-w-2xl text-base leading-8 text-slate-600">{profile.summary}</p>
           </div>
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
             <a
-              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 text-sm font-semibold text-white transition hover:bg-petroldark hover:shadow-accent"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 text-sm font-semibold text-white transition hover:bg-petroldark hover:shadow-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
               href="#contacto"
             >
               Agendar consulta
             </a>
-            <a
-              className="inline-flex items-center rounded-full border-2 border-copper px-6 py-3 text-sm font-semibold text-copper transition hover:bg-copper/5"
-              href={profile.cv}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver CV
-            </a>
-            <a
-              className="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:text-ink"
-              href={profile.linkedin}
-              rel="noreferrer"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
+            <div className="flex items-center gap-4 text-sm font-medium text-slate-600">
+              <a
+                className="underline-offset-4 transition hover:text-petrol hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                href={profile.cv}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Ver CV
+              </a>
+              <span aria-hidden="true" className="text-slate-300">
+                |
+              </span>
+              <a
+                className="underline-offset-4 transition hover:text-petrol hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                href={profile.linkedin}
+                rel="noreferrer"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-petroldark to-charcoal p-8 text-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(184,115,51,0.15),_transparent_40%)]" />
           <div className="relative space-y-6">
-            <div className="flex h-28 w-28 items-center justify-center rounded-3xl bg-copper/20 text-3xl font-bold text-copper">
-              VA
-            </div>
+            <Image
+              alt={`Foto de perfil de ${profile.titleShort}`}
+              className="h-28 w-28 rounded-3xl object-cover ring-1 ring-white/10"
+              height={112}
+              priority
+              src="/images/profile.jpg"
+              width={112}
+            />
             <div className="space-y-2">
               <p className="text-2xl font-bold">{profile.titleShort}</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-copper">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-copperlight">
                 {profile.credentials.candidate}
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-300">{profile.role}</p>
