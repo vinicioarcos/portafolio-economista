@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-  { href: "#sobre-mi", label: "Perfil" },
+  { href: "/perfil", label: "Perfil" },
   { href: "#servicios", label: "Servicios" },
+  { href: "/investigacion", label: "Investigación" },
+  { href: "/publicaciones", label: "Publicaciones" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#publicaciones", label: "Publicaciones" },
   { href: "#cursos", label: "Cursos" },
   { href: "#contacto", label: "Contacto" }
 ];
@@ -15,9 +16,10 @@ const navItems = [
 // entrada en `navItems`, para que el nav no se quede "congelado" en el
 // último ítem activo mientras se hace scroll por esas secciones.
 const sectionIds = [
-  "sobre-mi",
+  "perfil",
   "especialidades",
   "servicios",
+  "investigacion",
   "publicaciones",
   "proyectos",
   "cursos",

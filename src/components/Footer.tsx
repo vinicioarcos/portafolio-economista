@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
 import { profile } from "@/data/profile";
 
 export function Footer() {
@@ -18,29 +19,33 @@ export function Footer() {
             <li>
               <a
                 className="rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
-                href="#sobre-mi"
+                href="/perfil"
               >
                 Perfil profesional
               </a>
             </li>
             <li>
               <a
-                className="rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                className="inline-flex items-center gap-1.5 rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
                 href={profile.cv}
                 rel="noreferrer"
                 target="_blank"
               >
                 Descargar CV
+                <ExternalLinkIcon className="h-3 w-3" />
+                <span className="sr-only"> (se abre en una pestaña nueva)</span>
               </a>
             </li>
             <li>
               <a
-                className="rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                className="inline-flex items-center gap-1.5 rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
                 href={profile.linkedin}
                 rel="noreferrer"
                 target="_blank"
               >
                 LinkedIn
+                <ExternalLinkIcon className="h-3 w-3" />
+                <span className="sr-only"> (se abre en una pestaña nueva)</span>
               </a>
             </li>
           </ul>
