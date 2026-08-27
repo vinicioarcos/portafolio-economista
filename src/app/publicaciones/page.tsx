@@ -7,9 +7,10 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { publications } from "@/data/publications";
 
 export const metadata: Metadata = {
-  title: "Publicaciones | Vinicio Arcos",
+  title: "Publicaciones",
   description:
-    "Publicaciones académicas de Vinicio Arcos en economía laboral, educación, econometría y políticas públicas, con referencia bibliográfica, DOI y estado editorial."
+    "Publicaciones académicas de Vinicio Arcos en economía laboral, educación, econometría y políticas públicas, con referencia bibliográfica, DOI y estado editorial.",
+  alternates: { canonical: "/publicaciones" }
 };
 
 export default function PublicacionesPage() {

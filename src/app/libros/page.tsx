@@ -7,9 +7,10 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { books } from "@/data/books";
 
 export const metadata: Metadata = {
-  title: "Libros | Vinicio Arcos",
+  title: "Libros",
   description:
-    "Libros de Vinicio Arcos sobre econometría, economía política y evaluación de impacto, con su estado editorial: publicado o en preparación."
+    "Libros de Vinicio Arcos sobre econometría, economía política y evaluación de impacto, con su estado editorial: publicado o en preparación.",
+  alternates: { canonical: "/libros" }
 };
 
 export default function LibrosPage() {

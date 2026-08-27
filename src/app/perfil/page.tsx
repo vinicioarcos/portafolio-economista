@@ -11,9 +11,10 @@ import { profile } from "@/data/profile";
 import { skills } from "@/data/skills";
 
 export const metadata: Metadata = {
-  title: "Perfil | Vinicio Arcos",
+  title: "Perfil",
   description:
-    "Perfil profesional de Vinicio Arcos: formación académica, experiencia profesional y docente, y capacidades técnicas en econometría, ciencia de datos y políticas públicas."
+    "Perfil profesional de Vinicio Arcos: formación académica, experiencia profesional y docente, y capacidades técnicas en econometría, ciencia de datos y políticas públicas.",
+  alternates: { canonical: "/perfil" }
 };
 
 const skillGroups: { label: string; items: string[] }[] = [

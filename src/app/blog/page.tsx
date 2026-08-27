@@ -7,9 +7,10 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { blogPosts } from "@/data/blogPosts";
 
 export const metadata: Metadata = {
-  title: "Blog | Vinicio Arcos",
+  title: "Blog",
   description:
-    "Artículos de Vinicio Arcos sobre economía laboral, economía de la educación, inteligencia artificial y políticas públicas."
+    "Artículos de Vinicio Arcos sobre economía laboral, economía de la educación, inteligencia artificial y políticas públicas.",
+  alternates: { canonical: "/blog" }
 };
 
 export default function BlogPage() {

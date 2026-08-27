@@ -18,11 +18,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: BlogPostPageProps): Metadata {
   const post = blogPosts.find((item) => item.slug === params.slug);
   if (!post) {
-    return { title: "Artículo no encontrado | Vinicio Arcos" };
+    return { title: "Artículo no encontrado" };
   }
   return {
-    title: `${post.title} | Vinicio Arcos`,
-    description: post.excerpt
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` }
   };
 }
 

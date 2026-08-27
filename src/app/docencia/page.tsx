@@ -10,9 +10,10 @@ import { courses } from "@/data/courses";
 import { training } from "@/data/training";
 
 export const metadata: Metadata = {
-  title: "Docencia | Vinicio Arcos",
+  title: "Docencia",
   description:
-    "Docencia universitaria y capacitación ejecutiva de Vinicio Arcos: cursos y talleres en econometría, ciencia de datos y evaluación de políticas, y formación docente continua."
+    "Docencia universitaria y capacitación ejecutiva de Vinicio Arcos: cursos y talleres en econometría, ciencia de datos y evaluación de políticas, y formación docente continua.",
+  alternates: { canonical: "/docencia" }
 };
 
 export default function DocenciaPage() {

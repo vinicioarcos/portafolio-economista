@@ -8,6 +8,8 @@ const navItems = [
   { href: "/investigacion", label: "Investigación" },
   { href: "/publicaciones", label: "Publicaciones" },
   { href: "/docencia", label: "Docencia" },
+  { href: "/libros", label: "Libros" },
+  { href: "/blog", label: "Blog" },
   { href: "#contacto", label: "Contacto" }
 ];
 

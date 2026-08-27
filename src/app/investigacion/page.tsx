@@ -7,9 +7,10 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { research } from "@/data/research";
 
 export const metadata: Metadata = {
-  title: "Investigación | Vinicio Arcos",
+  title: "Investigación",
   description:
-    "Proyectos de investigación en curso de Vinicio Arcos: mercado laboral con microdatos ENEMDU, Censo de Ecuador y sectores productivos de Latacunga, con enlace a los repositorios OSF."
+    "Proyectos de investigación en curso de Vinicio Arcos: mercado laboral con microdatos ENEMDU, Censo de Ecuador y sectores productivos de Latacunga, con enlace a los repositorios OSF.",
+  alternates: { canonical: "/investigacion" }
 };
 
 export default function InvestigacionPage() {
