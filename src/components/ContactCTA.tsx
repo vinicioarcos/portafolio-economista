@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
 import { profile } from "@/data/profile";
 
 export function ContactCTA() {
@@ -26,12 +27,14 @@ export function ContactCTA() {
             {profile.email}
           </a>
           <a
-            className="block rounded text-xs text-slate-400 transition hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+            className="inline-flex items-center gap-1.5 rounded text-xs text-slate-400 transition hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
             href={profile.linkedin}
             rel="noreferrer"
             target="_blank"
           >
-            LinkedIn →
+            LinkedIn
+            <ExternalLinkIcon className="h-3 w-3" />
+            <span className="sr-only"> (se abre en una pestaña nueva)</span>
           </a>
           <a
             className="mt-4 inline-flex rounded-full bg-copper px-5 py-3 text-sm font-bold text-charcoal transition hover:bg-copperlight hover:shadow-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

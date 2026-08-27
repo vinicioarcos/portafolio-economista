@@ -1,3 +1,5 @@
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
+
 type CardProps = {
   title: string;
   subtitle?: string;
@@ -38,7 +40,10 @@ export function Card({
     >
       <div className="relative flex items-start justify-between gap-4">
         <div className="flex-1">
-          <h3 className="text-lg font-bold tracking-tight text-charcoal">{title}</h3>
+          <h3 className="flex items-center gap-1.5 text-lg font-bold tracking-tight text-charcoal">
+            {title}
+            {isInteractive ? <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0 text-slate-400" /> : null}
+          </h3>
           {subtitle ? (
             <p className="mt-2 text-sm font-medium text-petrol">{subtitle}</p>
           ) : null}
@@ -76,6 +81,7 @@ export function Card({
         target="_blank"
       >
         {content}
+        <span className="sr-only"> (se abre en una pestaña nueva)</span>
       </a>
     );
   }

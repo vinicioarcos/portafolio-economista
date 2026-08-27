@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
 import { profile } from "@/data/profile";
 
 export function Hero() {
@@ -30,23 +31,27 @@ export function Hero() {
             </a>
             <div className="flex items-center gap-4 text-sm font-medium text-slate-600">
               <a
-                className="underline-offset-4 transition hover:text-petrol hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                className="inline-flex items-center gap-1.5 underline-offset-4 transition hover:text-petrol hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
                 href={profile.cv}
                 rel="noreferrer"
                 target="_blank"
               >
                 Ver CV
+                <ExternalLinkIcon className="h-3 w-3" />
+                <span className="sr-only"> (se abre en una pestaña nueva)</span>
               </a>
               <span aria-hidden="true" className="text-slate-300">
                 |
               </span>
               <a
-                className="underline-offset-4 transition hover:text-petrol hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                className="inline-flex items-center gap-1.5 underline-offset-4 transition hover:text-petrol hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
                 href={profile.linkedin}
                 rel="noreferrer"
                 target="_blank"
               >
                 LinkedIn
+                <ExternalLinkIcon className="h-3 w-3" />
+                <span className="sr-only"> (se abre en una pestaña nueva)</span>
               </a>
             </div>
           </div>
