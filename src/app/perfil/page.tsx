@@ -22,6 +22,7 @@ const skillGroups: { label: string; items: string[] }[] = [
   { label: "SIG y análisis espacial", items: skills.gis },
   { label: "Visualización", items: skills.visualization },
   { label: "Plataformas y sistemas", items: [...skills.platforms, ...skills.systems] },
+  { label: "IA y desarrollo", items: skills.aiAndDev },
   { label: "Líneas de investigación", items: skills.researchLines }
 ];
 
@@ -74,6 +75,7 @@ export default function PerfilPage() {
               organization={item.institution}
               period={item.period}
               title={item.credential}
+              url={item.url}
             />
           ))}
         </div>

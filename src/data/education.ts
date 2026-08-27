@@ -3,22 +3,17 @@ export type EducationEntry = {
   institution: string;
   detail: string;
   period: string;
+  url?: string;
 };
 
 export const education: EducationEntry[] = [
-  {
-    credential: "Candidato a Doctor en Políticas Públicas",
-    institution: "FLACSO Ecuador",
-    detail:
-      "Doctorado de investigación, periodo de tesis. Propuesta: \"Cobertura de Seguro Social y Mercado laboral en Ecuador\". Beca de cuarto nivel.",
-    period: "Periodo no especificado"
-  },
   {
     credential: "Magíster en Economía, mención Economía del Desarrollo",
     institution: "FLACSO Ecuador",
     detail:
       "Máster de investigación. Registro SENESCYT 1026-15-86064999. Tesis: \"Impacto de la eliminación de la tercerización y los resultados en la capacitación laboral en el Ecuador\". Beca.",
-    period: "2015"
+    period: "2015",
+    url: "https://repositorio.flacsoandes.edu.ec/items/1d8d9e22-9538-483e-8af0-bee67aa210ea"
   },
   {
     credential: "Economista",

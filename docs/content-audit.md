@@ -112,13 +112,35 @@ Cambios implementados sobre este repo con contenido ya verificado:
 - El ítem de nav "Perfil" y el enlace del footer ahora apuntan a `/perfil` (antes anclaban a `#sobre-mi`); el id de esa sección en la portada se renombró a `perfil` para mantener el resaltado de nav consistente con el patrón usado en Investigación/Publicaciones.
 - Verificación ejecutada: `tsc --noEmit`, `next lint` y `next build` limpios (`/`, `/perfil`, `/investigacion`, `/publicaciones` prerrenderizadas); `next start` + `curl` confirmaron HTTP 200 en las 4 rutas y el contenido esperado (formación e instituciones correctas en `/perfil`, "SQL" ya no aparece en la portada).
 
+## 3.4 Fase 4 aplicada (2026-08-27): docencia + hoja de vida 2026
+
+- Nuevo `src/data/training.ts` + ruta `src/app/docencia/page.tsx`: cursos y talleres (top 3 en portada, catálogo completo en `/docencia`) y formación docente continua. El enlace externo a ARCDATA Campus se movió de la portada a `/docencia`.
+- **Vinicio entregó la hoja de vida oficial actualizada 2026** (`2_VITAE - VINICIO ARCOS NARANJO - 2026.pdf`), la fuente de mayor jerarquía según §4 de este documento. Se reemplazó `public/cv/vinicio-arcos-cv.pdf` con este archivo.
+- Esta hoja de vida **resuelve** varios pendientes:
+  - **Correo (§2.1):** confirma `vinicioarcosnaranjo@gmail.com` como el correo profesional vigente (coincide con lo que ya afirmaba `economista/content/profile.json`). Se actualizó `profile.ts`. El correo anterior (`vinicioarcos123@gmail.com`, usado en GitHub Pages y ligado a la cuenta de esta sesión) queda como alterno no publicado.
+  - **Ubicación (§2.2):** confirma Ambato como ciudad de residencia. `profile.location` ahora es "Ambato, Ecuador · Disponible para colaboraciones nacionales e internacionales" (sin publicar la dirección domiciliaria exacta, que sí aparece en el PDF pero no se muestra en el sitio).
+  - **Teléfono (§2.3):** confirma que `0992535336` sigue vigente. Se actualizó `profile.phone` con el valor real, pero **sigue sin renderizarse en ningún componente** — falta la confirmación explícita de que Vinicio quiere mostrarlo públicamente (vigencia ≠ autorización de publicación).
+  - **Institución de posgrado:** se corrigió `profile.credentials.university`, que decía "Universidad Tecnológica Cordillera (UTC)" — una institución que no aparece en ninguna fuente auditada — por "FLACSO Ecuador", que sí es la institución real del Máster (confirmada en las tres fuentes).
+- Se agregaron **2 publicaciones nuevas** confirmadas con DOI en la hoja de vida (no estaban en `economista/content/profile.json`): "Exposición de las ocupaciones ecuatorianas a la inteligencia artificial generativa..." (2026) y "Diversificación Económica y Crecimiento Sostenible en el Ecuador..." (2026). Total: 9 publicaciones.
+- Se actualizó `skills.ts` con herramientas nuevas de la hoja de vida: AWS, WordPress, y una categoría nueva "IA y desarrollo" (Visual Studio Code, Docker, Claude CLI, Codex CLI, Gemini CLI).
+- **No se publicó una sección "Referencias"**: la hoja de vida incluye nombre, cargo, celular y correo personal de 3 referencias profesionales (terceros). Publicar los datos de contacto de otras personas en un sitio web público sin su consentimiento no es apropiado; se omite deliberadamente.
+- **No se publicaron datos sensibles** presentes en el PDF: cédula, estado civil, fecha de nacimiento, dirección domiciliaria exacta.
+- Verificación ejecutada: `tsc --noEmit`, `next lint` y `next build` limpios (`/`, `/perfil`, `/investigacion`, `/publicaciones`, `/docencia` prerrenderizadas); `next start` + `curl` confirmaron HTTP 200 en las 5 rutas, el correo y ubicación nuevos en el HTML, las 2 publicaciones nuevas, las nuevas herramientas, "Universidad Tecnológica Cordillera" ya no aparece, y el CV descarga con el tamaño del archivo nuevo (559.150 bytes).
+
+### 3.4.1 Discrepancias resueltas directamente por Vinicio (2026-08-27)
+
+- **Candidatura doctoral: no está vigente.** Vinicio confirmó que la candidatura a "Doctor en Políticas Públicas" no sigue activa. Se eliminó la mención de todo el sitio: `profile.role`, `profile.summary`, `profile.credentials.candidate` (campo retirado) y el badge correspondiente en `Hero.tsx`. Se conserva únicamente la entrada de experiencia "Becario de doctorado y maestría — FLACSO Ecuador" (`experience.ts`, ya existente), que describe el rol de becario sin afirmar una candidatura activa. También se retiró de `education.ts` la ficha de formación "Candidato a Doctor en Políticas Públicas" que no constaba en la hoja de vida 2026.
+- **Título de tesis de maestría: confirmado "Impacto de la eliminación de la tercerización y los resultados en la capacitación laboral en el Ecuador".** Vinicio proporcionó el enlace verificable al repositorio institucional: https://repositorio.flacsoandes.edu.ec/items/1d8d9e22-9538-483e-8af0-bee67aa210ea. Se agregó como campo `url` en `education.ts` y se muestra como enlace "Ver tesis" en `/perfil` (nueva prop `url` en `TimelineItem.tsx`).
+
 ## 4. Pendiente de confirmación directa del titular
 
-1. Correo público a mostrar (§2.1).
-2. Si se publica el teléfono, y cuál (§2.3).
-3. URL correcta de LinkedIn (§2.4).
-4. Vigencia y validez del enlace ORCID/OSF como `sameAs` (§2.7).
+1. ~~Correo público a mostrar (§2.1).~~ **Resuelto en Fase 4** con la hoja de vida 2026: `vinicioarcosnaranjo@gmail.com`.
+2. Si se publica el teléfono en el sitio (vigencia ya confirmada: `0992535336`; falta la autorización explícita de mostrarlo públicamente) (§2.3).
+3. URL correcta de LinkedIn — la hoja de vida 2026 no incluye LinkedIn en absoluto, así que tampoco lo resuelve (§2.4).
+4. Vigencia y validez del enlace ORCID/OSF como `sameAs` (§2.7) — sí están confirmados en la hoja de vida 2026, pero sigue pendiente la verificación visual del perfil ORCID.
 5. Métricas cuantitativas, si existen con base reproducible (§2.6).
 6. Rol real de Vinicio en el Proyecto de Carrera de Economía UTC (§2.9).
 7. Documentación (capturas, enlaces, tecnología) de los 5 "proyectos" genéricos actuales, o autorización para retirarlos (§2.10).
 8. Confirmación de que el enlace de cursos ARCDATA (`arcdataconsulting.com/app/campus/courses/`) sigue vigente — es una SPA, el contenido no pudo verificarse por fetch automatizado.
+9. ~~Candidatura doctoral (§3.4.1).~~ **Resuelto**: no está vigente, se retiró del sitio.
+10. ~~Título de tesis de maestría (§3.4.1).~~ **Resuelto**: "Impacto de la eliminación de la tercerización...", con enlace verificable al repositorio FLACSO.

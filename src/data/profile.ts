@@ -1,16 +1,17 @@
 export const profile = {
   name: "Edwin Vinicio Arcos Naranjo",
   titleShort: "Vinicio Arcos",
-  role: "Economista · MSc. en Economía del Desarrollo · Candidato a doctor en Políticas Públicas",
+  role: "Economista · MSc. en Economía del Desarrollo",
   kicker: "Portafolio profesional",
   headline: "Análisis económico riguroso para instituciones que necesitan claridad y acción.",
   summary:
-    "Acompaño procesos de evaluación, planeación y toma de decisiones con herramientas económicas, lectura de datos y enfoque estratégico. MSc. en Economía del Desarrollo, candidato a doctor en Políticas Públicas con énfasis en economía laboral y educativa.",
+    "Acompaño procesos de evaluación, planeación y toma de decisiones con herramientas económicas, lectura de datos y enfoque estratégico. MSc. en Economía del Desarrollo, con énfasis en economía laboral y educativa.",
   about:
     "Economista con más de una década de experiencia en docencia universitaria, investigación aplicada y consultoría. Me especializo en econometría, ciencia de datos, políticas públicas, economía laboral, educativa y desarrollo local. Este portafolio integra experiencia docente, publicaciones académicas, proyectos de investigación, servicios de consultoría y programas de formación en una plataforma ágil y editable.",
-  location: "Ecuador · Disponible para colaboraciones nacionales e internacionales",
-  email: "vinicioarcos123@gmail.com",
-  phone: "+593 9 98 765 4321",
+  location: "Ambato, Ecuador · Disponible para colaboraciones nacionales e internacionales",
+  email: "vinicioarcosnaranjo@gmail.com",
+  /** Confirmado vigente en la hoja de vida 2026; no se publica en la UI hasta que Vinicio confirme que desea mostrarlo. */
+  phone: "+593 99 253 5336",
   linkedin: "https://www.linkedin.com/in/vinicio-arcos/",
   cv: "/cv/vinicio-arcos-cv.pdf",
   focusAreas: [
@@ -31,7 +32,6 @@ export const profile = {
   ],
   credentials: {
     degree: "MSc. Economía del Desarrollo",
-    candidate: "Candidato a Doctor en Políticas Públicas",
-    university: "Universidad Tecnológica Cordillera (UTC)"
+    university: "FLACSO Ecuador"
   }
 };

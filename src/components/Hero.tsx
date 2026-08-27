@@ -70,9 +70,6 @@ export function Hero() {
             />
             <div className="space-y-2">
               <p className="text-2xl font-bold">{profile.titleShort}</p>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-copperlight">
-                {profile.credentials.candidate}
-              </p>
               <p className="mt-3 text-sm leading-6 text-slate-300">{profile.role}</p>
             </div>
             <div className="grid gap-2 border-t border-white/10 pt-4 text-sm text-slate-200">

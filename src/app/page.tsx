@@ -1,6 +1,5 @@
 import { Card } from "@/components/Card";
 import { ContactCTA } from "@/components/ContactCTA";
-import { ExternalLinkIcon } from "@/components/ExternalLinkIcon";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -206,27 +205,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sección Cursos y Talleres */}
-      <section className="section-shell section-spacing" id="cursos">
+      {/* Sección Docencia */}
+      <section className="section-shell section-spacing" id="docencia">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionTitle
-            eyebrow="Cursos y talleres"
+            eyebrow="Docencia"
             title="Formación ejecutiva y académica"
             description="Programas diseñados para desarrollar criterio analítico, lectura de datos, métodos cuantitativos y capacidad de decisión estratégica."
           />
           <a
             className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-petrol px-5 py-3 text-sm font-semibold text-petrol transition hover:bg-petrol/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
-            href="https://www.arcdataconsulting.com/app/campus/courses/"
-            rel="noreferrer"
-            target="_blank"
+            href="/docencia"
           >
-            Ver todos los cursos
-            <ExternalLinkIcon className="h-3.5 w-3.5" />
-            <span className="sr-only"> (se abre en una pestaña nueva)</span>
+            Ver docencia completa
           </a>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
+          {courses.slice(0, 3).map((course) => (
             <Card
               key={course.title}
               description={course.description}

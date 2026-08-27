@@ -8,7 +8,7 @@ const navItems = [
   { href: "/investigacion", label: "Investigación" },
   { href: "/publicaciones", label: "Publicaciones" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#cursos", label: "Cursos" },
+  { href: "/docencia", label: "Docencia" },
   { href: "#contacto", label: "Contacto" }
 ];
 
@@ -22,7 +22,7 @@ const sectionIds = [
   "investigacion",
   "publicaciones",
   "proyectos",
-  "cursos",
+  "docencia",
   "herramientas",
   "contacto"
 ];

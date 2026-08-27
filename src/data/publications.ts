@@ -78,6 +78,34 @@ export const publications: Publication[] = [
     doi: "10.33386/593dp.2025.6.3631"
   },
   {
+    id: "exposicion-ia-generativa-ocupaciones-2026",
+    title:
+      "Exposición de las ocupaciones ecuatorianas a la inteligencia artificial generativa: una réplica adaptada del indicador Anthropic con ENEMDU 2025",
+    authors: ["Arequipa Lamingo, L. F.", "Sánchez Panimboza, M. Ángel", "Arcos Naranjo, V."],
+    year: 2026,
+    journal: "Revista de Investigación Enlace Universitario",
+    citation:
+      "Arequipa Lamingo, L. F., Sánchez Panimboza, M. Ángel y Arcos Naranjo, V. (2026). Exposición de las ocupaciones ecuatorianas a la inteligencia artificial generativa: una réplica adaptada del indicador Anthropic con ENEMDU 2025. Revista de Investigación Enlace Universitario, 25(2), 21-41.",
+    status: "published",
+    topics: ["Inteligencia artificial", "Mercado laboral", "Ocupaciones", "Econometría"],
+    url: "https://doi.org/10.33789/enlace.25.2.187",
+    doi: "10.33789/enlace.25.2.187"
+  },
+  {
+    id: "diversificacion-economica-2026",
+    title:
+      "Diversificación Económica y Crecimiento Sostenible en el Ecuador: una Evaluación con el Índice Herfindahl-Hirschman y Eficiencia Productiva Sectorial",
+    authors: ["Cuacés-Naranjo, D.", "Jami-Defaz, M.", "Arcos-Naranjo, E."],
+    year: 2026,
+    journal: "593 Digital Publisher CEIT",
+    citation:
+      "Cuacés-Naranjo, D., Jami-Defaz, M. y Arcos-Naranjo, E. (2026). Diversificación Económica y Crecimiento Sostenible en el Ecuador: una Evaluación con el Índice Herfindahl-Hirschman y Eficiencia Productiva Sectorial. 593 Digital Publisher CEIT, 11(4-1), 142-151.",
+    status: "published",
+    topics: ["Diversificación económica", "Crecimiento sostenible", "Econometría"],
+    url: "https://doi.org/10.33386/593dp.2026.4-1.4214",
+    doi: "10.33386/593dp.2026.4-1.4214"
+  },
+  {
     id: "oferta-educativa-superior-2020",
     title: "Impacto de la oferta educativa superior en la búsqueda de talento humano por parte de las empresas",
     authors: ["Arcos-Naranjo, E. V.", "Andocilla-Cabrera, J. R.", "Martínez-Valencia, K. M."],
