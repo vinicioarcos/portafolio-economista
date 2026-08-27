@@ -26,6 +26,22 @@ export function Footer() {
             </li>
             <li>
               <a
+                className="rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                href="/libros"
+              >
+                Libros
+              </a>
+            </li>
+            <li>
+              <a
+                className="rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                href="/blog"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
                 className="inline-flex items-center gap-1.5 rounded transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
                 href={profile.cv}
                 rel="noreferrer"

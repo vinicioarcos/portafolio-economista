@@ -213,12 +213,20 @@ export default function HomePage() {
             title="Formación ejecutiva y académica"
             description="Programas diseñados para desarrollar criterio analítico, lectura de datos, métodos cuantitativos y capacidad de decisión estratégica."
           />
-          <a
-            className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-petrol px-5 py-3 text-sm font-semibold text-petrol transition hover:bg-petrol/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
-            href="/docencia"
-          >
-            Ver docencia completa
-          </a>
+          <div className="flex shrink-0 flex-wrap gap-3">
+            <a
+              className="inline-flex items-center gap-2 rounded-full border-2 border-petrol px-5 py-3 text-sm font-semibold text-petrol transition hover:bg-petrol/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+              href="/docencia"
+            >
+              Ver docencia completa
+            </a>
+            <a
+              className="inline-flex items-center gap-2 rounded-full border-2 border-petrol px-5 py-3 text-sm font-semibold text-petrol transition hover:bg-petrol/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+              href="/libros"
+            >
+              Ver libros
+            </a>
+          </div>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {courses.slice(0, 3).map((course) => (
