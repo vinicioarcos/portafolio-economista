@@ -27,6 +27,12 @@ export function ContactCTA() {
             {profile.email}
           </a>
           <a
+            className="block rounded text-xs text-slate-400 transition hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+            href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+          >
+            {profile.phone}
+          </a>
+          <a
             className="inline-flex items-center gap-1.5 rounded text-xs text-slate-400 transition hover:text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
             href={profile.linkedin}
             rel="noreferrer"

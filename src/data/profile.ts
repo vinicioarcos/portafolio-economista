@@ -10,7 +10,6 @@ export const profile = {
     "Economista con más de una década de experiencia en docencia universitaria, investigación aplicada y consultoría. Me especializo en econometría, ciencia de datos, políticas públicas, economía laboral, educativa y desarrollo local. Este portafolio integra experiencia docente, publicaciones académicas, proyectos de investigación, servicios de consultoría y programas de formación en una plataforma ágil y editable.",
   location: "Ambato, Ecuador · Disponible para colaboraciones nacionales e internacionales",
   email: "vinicioarcosnaranjo@gmail.com",
-  /** Confirmado vigente en la hoja de vida 2026; no se publica en la UI hasta que Vinicio confirme que desea mostrarlo. */
   phone: "+593 99 253 5336",
   linkedin: "https://www.linkedin.com/in/vinicio-arcos/",
   cv: "/cv/vinicio-arcos-cv.pdf",

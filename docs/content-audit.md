@@ -140,15 +140,23 @@ Cambios implementados sobre este repo con contenido ya verificado:
 - La portada no ganó dos secciones más: dado que ya es larga (problema señalado explícitamente en el brief), Libros y Blog se enlazan desde la sección de Docencia ("Ver libros") y desde el Footer, no como secciones propias. Tampoco se agregaron al nav principal (ya tiene 7 ítems; agregar 2 más arriesgaba desborde horizontal) — pendiente una navegación agrupada ("Trabajo" / "Conocimiento") como sugiere el brief, no implementada todavía.
 - Verificación ejecutada: `tsc --noEmit`, `next lint` y `next build` limpios (13 rutas generadas, incluyendo los 3 posts estáticos vía SSG); `next start` + `curl` confirmaron HTTP 200 en `/libros`, `/blog` y los 3 posts, **404 real** en un slug inexistente, "en boga" presente y "en voga" ausente, y los 2 libros en preparación con su enlace de notificación funcional.
 
+## 3.6 Fase 6 aplicada (2026-08-27): retiro de proyectos genéricos + publicación del teléfono
+
+- **Instrucción directa de Vinicio:** "proyectos genéricos, retirar; publicar celular; prosigo hasta el final".
+- `src/data/projects.ts` se reescribió con el esquema tipado completo (`id/title/summary/problem/role/methods/deliverables/technologies/category/status/url?/repositoryUrl?/image?`, acorde a la arquitectura de contenido del brief) pero con el arreglo **vacío**: los 5 casos anteriores no tenían respaldo verificable en ninguna fuente auditada. Se retiraron en vez de mantenerlos ocultos, ya que no hay indicios de que vayan a documentarse.
+- Se quitó la sección "Proyectos" de la portada (no se deja una sección vacía) y el ítem correspondiente del nav y de `sectionIds`. La infraestructura (tipo, componente `Card` reutilizable) queda lista para cuando existan proyectos reales y documentados.
+- `profile.phone` ahora se publica en `Hero.tsx`, `ContactCTA.tsx` y `Footer.tsx` como enlace `tel:`, con autorización explícita del titular.
+- Verificación ejecutada: `tsc --noEmit`, `next lint` y `next build` limpios; `next start` + `curl` confirmaron que el teléfono aparece en el HTML y que ningún texto de los proyectos retirados ("Agenda económica para gobierno local", "Municipio metropolitano", etc.) sigue presente.
+
 ## 4. Pendiente de confirmación directa del titular
 
 1. ~~Correo público a mostrar (§2.1).~~ **Resuelto en Fase 4** con la hoja de vida 2026: `vinicioarcosnaranjo@gmail.com`.
-2. Si se publica el teléfono en el sitio (vigencia ya confirmada: `0992535336`; falta la autorización explícita de mostrarlo públicamente) (§2.3).
-3. URL correcta de LinkedIn — la hoja de vida 2026 no incluye LinkedIn en absoluto, así que tampoco lo resuelve (§2.4).
+2. ~~Publicación del teléfono (§2.3).~~ **Resuelto en Fase 6**: publicado en el sitio.
+3. URL correcta de LinkedIn — la hoja de vida 2026 no incluye LinkedIn en absoluto, así que tampoco lo resuelve (§2.4). **Sigue sin poder verificarse automáticamente** (LinkedIn bloquea el fetch); se mantiene la URL que ya tenía el sitio (`/in/vinicio-arcos/`) sin cambios hasta que el titular la confirme.
 4. Vigencia y validez del enlace ORCID/OSF como `sameAs` (§2.7) — sí están confirmados en la hoja de vida 2026, pero sigue pendiente la verificación visual del perfil ORCID.
 5. Métricas cuantitativas, si existen con base reproducible (§2.6).
 6. Rol real de Vinicio en el Proyecto de Carrera de Economía UTC (§2.9).
-7. Documentación (capturas, enlaces, tecnología) de los 5 "proyectos" genéricos actuales, o autorización para retirarlos (§2.10).
+7. ~~Documentación de los 5 "proyectos" genéricos (§2.10).~~ **Resuelto en Fase 6**: retirados del sitio.
 8. Confirmación de que el enlace de cursos ARCDATA (`arcdataconsulting.com/app/campus/courses/`) sigue vigente — es una SPA, el contenido no pudo verificarse por fetch automatizado.
 9. ~~Candidatura doctoral (§3.4.1).~~ **Resuelto**: no está vigente, se retiró del sitio.
 10. ~~Título de tesis de maestría (§3.4.1).~~ **Resuelto**: "Impacto de la eliminación de la tercerización...", con enlace verificable al repositorio FLACSO.

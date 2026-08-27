@@ -82,6 +82,12 @@ export function Hero() {
               >
                 {profile.email}
               </a>
+              <a
+                href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+                className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 transition hover:bg-white/10"
+              >
+                {profile.phone}
+              </a>
             </div>
           </div>
         </div>

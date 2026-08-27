@@ -10,7 +10,6 @@ import { TimelineItem } from "@/components/TimelineItem";
 import { courses } from "@/data/courses";
 import { professionalExperience, teachingExperience } from "@/data/experience";
 import { profile } from "@/data/profile";
-import { projects } from "@/data/projects";
 import { publications } from "@/data/publications";
 import { research } from "@/data/research";
 import { services } from "@/data/services";
@@ -181,27 +180,6 @@ export default function HomePage() {
             .map((publication) => (
               <PublicationCard key={publication.id} publication={publication} />
             ))}
-        </div>
-      </section>
-
-      {/* Sección Proyectos */}
-      <section className="section-shell section-spacing" id="proyectos">
-        <SectionTitle
-          eyebrow="Proyectos"
-          title="Experiencia construida sobre resultados"
-          description="Casos de trabajo donde el análisis económico se conectó con decisiones de inversión, política pública y gestión institucional."
-        />
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 [&>*:last-child:nth-child(odd)]:col-span-full">
-          {projects.map((project) => (
-            <Card
-              key={project.title}
-              description={project.summary}
-              meta={project.period}
-              subtitle={project.client}
-              tags={project.outcomes}
-              title={project.title}
-            />
-          ))}
         </div>
       </section>
 

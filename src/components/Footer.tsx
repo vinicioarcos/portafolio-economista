@@ -78,6 +78,14 @@ export function Footer() {
                 {profile.email}
               </a>
             </li>
+            <li>
+              <a
+                className="rounded text-slate-600 transition hover:text-petrol focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-petrol"
+                href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+              >
+                {profile.phone}
+              </a>
+            </li>
             <li className="text-slate-600">{profile.location}</li>
           </ul>
         </div>
