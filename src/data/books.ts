@@ -18,9 +18,9 @@ export const books: Book[] = [
   },
   {
     id: "la-trampa-del-voto-popular",
-    title: "La trampa del voto popular",
+    title: "Jaque mate a la democracia",
     description:
-      "Cómo las mayorías pueden amenazar la democracia y el bienestar colectivo (1.ª ed., 2022).",
+      "Diez tácticas para destruir una nación con el voto de las mayorías (2.ª ed., 2026).",
     status: "published",
     url: "https://a.co/d/08sxGkmy"
   },
