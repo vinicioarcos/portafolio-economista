@@ -22,7 +22,7 @@ export const books: Book[] = [
     description:
       "Cómo las mayorías pueden amenazar la democracia y el bienestar colectivo (1.ª ed., 2022).",
     status: "published",
-    url: "https://a.co/d/3hArPfX"
+    url: "https://a.co/d/08sxGkmy"
   },
   {
     id: "econometria-financiera-python",
