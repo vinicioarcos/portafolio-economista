@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edwin Vinicio Arcos, economista</title>
+<meta name="description" content="Economista en Latacunga, Ecuador. Econometría, ciencia de datos, políticas públicas y herramientas digitales para la docencia y la investigación.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,750&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E6E9E3;
+    --text: #172238;
+    --muted: #4D5A66;
+    --accent: #9A5E12;
+    --accent-text: #FFFFFF;
+    --rule: rgba(23, 34, 56, 0.18);
+    --scrim: rgba(230, 233, 227, 0.84);
+    --pt-warm: #B0701A;
+    --pt-cool: #2E6C76;
+    --pt-peak: #243452;
+    --pt-dim: #9FAAA7;
+    --display: "Bricolage Grotesque", "Avenir Next Condensed", "Arial Narrow", system-ui, sans-serif;
+    --serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #162033;
+      --text: #E7EAE3;
+      --muted: #A9B3BA;
+      --accent: #E3A83B;
+      --accent-text: #162033;
+      --rule: rgba(231, 234, 227, 0.16);
+      --scrim: rgba(22, 32, 51, 0.8);
+      --pt-warm: #E3A83B;
+      --pt-cool: #8FBFC6;
+      --pt-peak: #F1F3EC;
+      --pt-dim: #4C6788;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #162033;
+    --text: #E7EAE3;
+    --muted: #A9B3BA;
+    --accent: #E3A83B;
+    --accent-text: #162033;
+    --rule: rgba(231, 234, 227, 0.16);
+    --scrim: rgba(22, 32, 51, 0.8);
+    --pt-warm: #E3A83B;
+    --pt-cool: #8FBFC6;
+    --pt-peak: #F1F3EC;
+    --pt-dim: #4C6788;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img, svg, canvas { max-width: 100%; }
+  a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+  #scene {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 0;
+  }
+  .veil {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--scrim) 0%, var(--scrim) 30%, transparent 62%);
+  }
+
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
+    font-family: var(--display);
+    font-size: 0.98rem;
+  }
+  .nav .brand { font-weight: 600; text-decoration: none; letter-spacing: -0.01em; }
+  .nav ul { list-style: none; display: flex; gap: 1.6rem; margin: 0; padding: 0; }
+  .nav ul a { text-decoration: none; color: var(--muted); }
+  .nav ul a:hover, .nav ul a[aria-current="true"] { color: var(--text); }
+  .nav ul a[aria-current="true"] { text-decoration: underline; }
+
+  main { position: relative; z-index: 2; }
+  section {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 7rem clamp(1.25rem, 5vw, 4rem) 5rem;
+  }
+  .copy { max-width: 36rem; }
+
+  h1, h2, h3 { font-family: var(--display); margin: 0; }
+  h1 {
+    font-size: clamp(3.2rem, 9vw, 7.2rem);
+    font-weight: 750;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    margin-bottom: 1.8rem;
+  }
+  h1 span { display: block; }
+  h2 {
+    font-size: clamp(2.1rem, 4.6vw, 3.5rem);
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.4rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  p { margin: 0 0 1.1rem; }
+  .lede { font-size: 1.38rem; line-height: 1.5; }
+  .muted { color: var(--muted); }
+
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin-top: 2rem; }
+  .btn {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 1.4rem;
+    background: var(--accent);
+    color: var(--accent-text);
+    text-decoration: none;
+    border-radius: 999px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .link { font-family: var(--display); font-weight: 600; font-size: 1rem; }
+
+  .entries { list-style: none; margin: 1.8rem 0 0; padding: 0; border-top: 1px solid var(--rule); }
+  .entries li { padding: 1.05rem 0; border-bottom: 1px solid var(--rule); }
+  .entries p { margin: 0.3rem 0 0; font-size: 1.08rem; }
+  .entries .status { color: var(--muted); font-style: italic; }
+
+  .facts { margin: 1.6rem 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1.4rem; font-size: 1.08rem; }
+  .facts dt { font-family: var(--display); font-weight: 600; font-size: 0.98rem; padding-top: 0.12rem; }
+  .facts dd { margin: 0; }
+
+  .courses { font-size: 1.08rem; }
+
+  .caption {
+    position: fixed;
+    right: clamp(1.25rem, 5vw, 4rem);
+    bottom: 1.4rem;
+    z-index: 3;
+    max-width: 22rem;
+    text-align: right;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--muted);
+    transition: opacity 0.35s ease;
+  }
+  .caption b { font-style: normal; font-family: var(--display); font-weight: 600; color: var(--text); margin-right: 0.35rem; }
+
+  footer {
+    position: relative;
+    z-index: 2;
+    padding: 2rem clamp(1.25rem, 5vw, 4rem) 4.5rem;
+    font-size: 0.98rem;
+    color: var(--muted);
+  }
+
+  .no-webgl #scene { display: none; }
+
+  @media (max-width: 900px) {
+    .veil { background: linear-gradient(180deg, transparent 0%, transparent 40%, var(--scrim) 70%); }
+    .nav ul li:not(:last-child) { display: none; }
+    section { align-items: flex-end; padding-bottom: 6rem; }
+    .copy { background: var(--scrim); padding: 1.4rem; margin: 0 -1.4rem; border-radius: 6px; }
+    .caption { left: 1.25rem; right: 1.25rem; text-align: left; max-width: none; bottom: 1rem; font-size: 0.85rem; }
+    .facts { grid-template-columns: 1fr; gap: 0.1rem; }
+    .facts dd { margin-bottom: 0.7rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .caption { transition: none; }
+  }
+</style>
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Principal">
+  <a class="brand" href="#inicio">Econ. Edwin Vinicio Arcos</a>
+  <ul>
+    <li><a href="#investigacion">Investigación</a></li>
+    <li><a href="#docencia">Docencia</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="inicio" data-caption="Cotopaxi, 5897 m, dibujado con 9025 puntos.">
+    <div class="copy">
+      <h1><span>Edwin</span><span>Vinicio</span><span>Arcos</span></h1>
+      <p class="lede">Economista. Estudio el mercado laboral y la educación en Ecuador con microdatos, y construyo herramientas digitales para enseñar e investigar mejor. Trabajo desde Latacunga, frente al Cotopaxi.</p>
+      <div class="actions">
+        <a class="btn" href="#investigacion">Ver investigación</a>
+        <a class="link" href="mailto:contacto@arcdataconsulting.com">Escribir un correo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="perfil" data-caption="Nube de observaciones simuladas y su plano de regresión.">
+    <div class="copy">
+      <h2>Econometría al servicio de las decisiones públicas</h2>
+      <p>Más de una década entre la docencia universitaria, la investigación aplicada y la consultoría. Me interesa que un modelo responda una pregunta concreta de política, no que luzca bien en una tabla.</p>
+      <dl class="facts">
+        <dt>Formación</dt>
+        <dd>Economista, Universidad Católica de Cuenca. Máster en Economía, FLACSO. Candidato a Doctor en Políticas Públicas, FLACSO.</dd>
+        <dt>Especialidades</dt>
+        <dd>Econometría, ciencia de datos, políticas públicas, economía laboral, economía de la educación y desarrollo local.</dd>
+        <dt>Herramientas</dt>
+        <dd>Python y Stata.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="investigacion" data-caption="Densidad conjunta de dos grupos, con datos simulados.">
+    <div class="copy">
+      <h2>Lo que muestran los microdatos</h2>
+      <p>Trabajo con encuestas de hogares del INEC para entender quién consigue un empleo acorde con su formación y cómo se transmiten las identidades entre generaciones.</p>
+      <ul class="entries">
+        <li>
+          <h3>Sobreeducación en Ecuador</h3>
+          <p>ENEMDU 2025, método ORU y ecuaciones de Mincer con corrección por selección. <span class="status">En evaluación editorial.</span></p>
+        </li>
+        <li>
+          <h3>Hogares interétnicos e identificación étnica intergeneracional</h3>
+          <p>¿Qué identidad declaran los hijos de hogares mixtos? <span class="status">En evaluación editorial.</span></p>
+        </li>
+        <li>
+          <h3>Jaque mate a la democracia</h3>
+          <p>Ensayo para lectores generales sobre los límites del voto popular. <span class="status">Nueva edición en preparación.</span></p>
+        </li>
+      </ul>
+      <p class="muted" style="margin-top:1.2rem">Otras líneas abiertas: mercado laboral, economía de la educación, pobreza y desarrollo.</p>
+    </div>
+  </section>
+
+  <section id="docencia" data-caption="Una esfera de nodos conectados, a modo de red.">
+    <div class="copy">
+      <h2>En el aula</h2>
+      <p>Soy profesor de la Carrera de Economía en la Universidad Técnica de Cotopaxi. He dictado cursos de grado y posgrado también en la Universidad Estatal de Milagro, la Universidad Técnica de Ambato y la Universidad Tecnológica Equinoccial.</p>
+      <p class="courses">Econometría II, Macroeconomía I, Políticas Públicas, Economía Financiera II y Análisis del Contexto Nacional y Global.</p>
+      <ul class="entries">
+        <li>
+          <h3>Econolab</h3>
+          <p>Python y econometría para docentes y estudiantes que hacen tesis, con retos sobre datos reales de la ENEMDU en Google Colab.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proyectos" data-caption="Panel de barras en tres dimensiones, con datos simulados.">
+    <div class="copy">
+      <h2>Herramientas que construyo</h2>
+      <p>Cuando un proceso académico se repite cada semestre, prefiero convertirlo en software.</p>
+      <ul class="entries">
+        <li>
+          <h3><a href="https://www.arcdata.app/">ARCDATA</a></h3>
+          <p>Economía, datos y productos digitales.</p>
+        </li>
+        <li>
+          <h3><a href="https://manuscrito.arcdata.app/manuscrito">Manuscrito</a></h3>
+          <p>Importa un paper, lo divide en partes y te acompaña mientras redactas el tuyo.</p>
+        </li>
+        <li>
+          <h3>Campus</h3>
+          <p>Gestión académica y administrativa para la Facultad de Ciencias Administrativas y Económicas.</p>
+        </li>
+        <li>
+          <h3>Diseño y rediseño de carreras</h3>
+          <p>Tableros y documentación curricular para procesos de evaluación y aseguramiento de la calidad.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto" data-caption="De vuelta al Cotopaxi.">
+    <div class="copy">
+      <h2>Conversemos</h2>
+      <p class="lede">Si buscas coautoría, consultoría en datos o un curso de econometría aplicada, escríbeme.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:contacto@arcdataconsulting.com">contacto@arcdataconsulting.com</a>
+        <a class="link" href="https://www.arcdata.app/">Visitar ARCDATA</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Edwin Vinicio Arcos. Latacunga, Ecuador.</footer>
+
+<p class="caption" id="caption" aria-live="polite"><b id="fig">Fig. 1</b><span id="captext"></span></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  const root = document.documentElement;
+  const canvas = document.getElementById('scene');
+  const sections = Array.from(document.querySelectorAll('main section'));
+  const navLinks = Array.from(document.querySelectorAll('.nav ul a'));
+  const fig = document.getElementById('fig');
+  const capText = document.getElementById('captext');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  let currentIndex = -1;
+  function setActive(i) {
+    if (i === currentIndex) return;
+    currentIndex = i;
+    const caption = document.getElementById('caption');
+    const apply = () => {
+      fig.textContent = 'Fig. ' + (i + 1);
+      capText.textContent = sections[i].dataset.caption || '';
+      caption.style.opacity = 1;
+    };
+    if (reduceMotion.matches) { apply(); }
+    else { caption.style.opacity = 0; setTimeout(apply, 250); }
+    const id = sections[i].id;
+    navLinks.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false'));
+  }
+
+  function sectionFloat() {
+    const mid = window.scrollY + window.innerHeight * 0.5;
+    const centers = sections.map(s => s.offsetTop + s.offsetHeight * 0.5);
+    if (mid <= centers[0]) return 0;
+    const last = centers.length - 1;
+    if (mid >= centers[last]) return last;
+    for (let i = 0; i < last; i++) {
+      if (mid < centers[i + 1]) {
+        const t = (mid - centers[i]) / (centers[i + 1] - centers[i]);
+        const x = Math.min(1, Math.max(0, (t - 0.3) / 0.4));
+        return i + x * x * (3 - 2 * x);
+      }
+    }
+    return last;
+  }
+
+  if (typeof THREE === 'undefined' || !(function () {
+    try { const c = document.createElement('canvas'); return !!(c.getContext('webgl') || c.getContext('experimental-webgl')); }
+    catch (e) { return false; }
+  })()) {
+    root.classList.add('no-webgl');
+    const onScroll = () => setActive(Math.round(sectionFloat()));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return;
+  }
+
+  // ---------- Datos de las figuras ----------
+  const G = 95;
+  const N = G * G;
+  const FLOOR = -1.6;
+
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function gauss(rng) {
+    let u = 0, v = 0;
+    while (u === 0) u = rng();
+    while (v === 0) v = rng();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  // Cada figura devuelve posiciones y un "tono" por punto: 0 tenue, 1 frío, 2 cálido, 3 cumbre
+  function volcano() {
+    const rng = mulberry32(11);
+    const p = new Float32Array(N * 3), tone = new Float32Array(N);
+    const R = 5.2, H = 3.9, crater = 0.42;
+    const hAt = r => H * Math.pow(1 - r / R, 1.45);
+    for (let i = 0; i < N; i++) {
+      const a = rng() * Math.PI * 2;
+      let r, h, k;
+      if (i < N * 0.2) {
+        r = R + Math.pow(rng(), 0.8) * 4.2;
+        h = Math.abs(gauss(rng)) * 0.05 + 0.03 * Math.sin(a * 5 + r);
+        k = 0;
+      } else {
+        r = R * Math.pow(rng(), 0.72);
+        if (r < crater) h = hAt(crater) - (crater - r) * 0.9;
+        else h = hAt(r);
+        h += gauss(rng) * 0.035;
+        const t = h / H;
+        k = t > 0.72 ? 3 : (t > 0.35 ? 1 + (t - 0.35) * 2.7 : 1 + t * 0.0);
+        if (t <= 0.72 && rng() < 0.08) k = 0;
+      }
+      p[i * 3] = Math.cos(a) * r;
+      p[i * 3 + 1] = FLOOR + h;
+      p[i * 3 + 2] = Math.sin(a) * r;
+      tone[i] = k;
+    }
+    return { p, tone };
+  }
+
+  function regression() {
+    const rng = mulberry32(23);
+    const p = new Float32Array(N * 3), tone = new Float32Array(N);
+    for (let i = 0; i < N; i++) {
+      const x = (rng() * 2 - 1) * 3.4;
+      const z = (rng() * 2 - 1) * 3.4;
+      const yhat = 0.45 * x + 0.1 * z;
+      if (i < N * 0.3) {
+        p[i * 3] = x; p[i * 3 + 1] = yhat; p[i * 3 + 2] = z;
+        tone[i] = 0;
+      } else {
+        const e = gauss(rng) * 0.75;
+        p[i * 3] = x; p[i * 3 + 1] = yhat + e; p[i * 3 + 2] = z;
+        tone[i] = e > 0 ? 2 : 1;
+        if (Math.abs(e) > 1.35) tone[i] = 3;
+      }
+    }
+    return { p, tone };
+  }
+
+  function density() {
+    const p = new Float32Array(N * 3), tone = new Float32Array(N);
+    let idx = 0;
+    for (let i = 0; i < G; i++) {
+      for (let j = 0; j < G; j++) {
+        const x = (i / (G - 1) * 2 - 1) * 5.2;
+        const z = (j / (G - 1) * 2 - 1) * 5.2;
+        const d1 = Math.exp(-((x + 1.5) ** 2 + (z + 0.7) ** 2) / (2 * 1.25));
+        const d2 = Math.exp(-((x - 1.9) ** 2 + (z - 1.3) ** 2) / (2 * 0.7));
+        const y = 3.3 * (0.62 * d1 + 0.5 * d2);
+        p[idx * 3] = x; p[idx * 3 + 1] = FLOOR + y; p[idx * 3 + 2] = z;
+        const t = y / 2.1;
+        tone[idx] = t < 0.04 ? 0.55 : Math.min(3, (d2 > d1 ? 2 : 1) + t * 1.2);
+        idx++;
+      }
+    }
+    return { p, tone };
+  }
+
+  function sphere() {
+    const rng = mulberry32(37);
+    const p = new Float32Array(N * 3), tone = new Float32Array(N);
+    const R = 3.1, phi = Math.PI * (3 - Math.sqrt(5));
+    for (let i = 0; i < N; i++) {
+      const y = 1 - (i / (N - 1)) * 2;
+      const r = Math.sqrt(1 - y * y);
+      const th = phi * i;
+      const jitter = 1 + gauss(rng) * 0.012;
+      p[i * 3] = Math.cos(th) * r * R * jitter;
+      p[i * 3 + 1] = y * R * jitter + 0.2;
+      p[i * 3 + 2] = Math.sin(th) * r * R * jitter;
+      const u = rng();
+      tone[i] = u < 0.03 ? 3 : (u < 0.1 ? 2 : (u < 0.35 ? 0 : 1));
+    }
+    return { p, tone };
+  }
+
+  function bars() {
+    const rng = mulberry32(41);
+    const p = new Float32Array(N * 3), tone = new Float32Array(N);
+    const B = 10, step = 0.9, half = (B - 1) * step / 2;
+    const heights = [];
+    for (let i = 0; i < B; i++) for (let j = 0; j < B; j++) {
+      heights.push(0.3 + 3.2 * (0.5 + 0.5 * Math.sin(i * 0.7 + 0.4) * Math.cos(j * 0.6 - 0.3)) + rng() * 0.3);
+    }
+    const hmax = Math.max.apply(null, heights);
+    for (let k = 0; k < N; k++) {
+      const b = k % (B * B);
+      const bi = Math.floor(b / B), bj = b % B;
+      const h = heights[b];
+      const face = rng();
+      let dx, dz, y;
+      if (face < 0.35) { dx = (rng() - 0.5) * 0.56; dz = (rng() - 0.5) * 0.56; y = h; }
+      else { dx = (rng() < 0.5 ? -0.28 : 0.28) + gauss(rng) * 0.008; dz = (rng() < 0.5 ? -0.28 : 0.28) + gauss(rng) * 0.008; y = rng() * h; }
+      p[k * 3] = bi * step - half + dx;
+      p[k * 3 + 1] = FLOOR + y;
+      p[k * 3 + 2] = bj * step - half + dz;
+      const t = h / hmax;
+      tone[k] = face < 0.35 ? (t > 0.8 ? 3 : 2) : (t > 0.6 ? 1 : 0);
+    }
+    return { p, tone };
+  }
+
+  const base = volcano();
+  const shapes = [base, regression(), density(), sphere(), bars(), base];
+  const views = [
+    { elev: 0.24, dist: 15.5, spin: 0.0 },
+    { elev: 0.3, dist: 15.5, spin: 0.55 },
+    { elev: 0.62, dist: 14.5, spin: 1.7 },
+    { elev: 0.18, dist: 13.5, spin: 2.4 },
+    { elev: 0.6,  dist: 17.5, spin: 3.95 },
+    { elev: 0.2,  dist: 16.5, spin: 4.3 }
+  ];
+
+  // ---------- Three.js ----------
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+
+  function spriteTexture() {
+    const c = document.createElement('canvas');
+    c.width = c.height = 64;
+    const g = c.getContext('2d');
+    const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grad.addColorStop(0, 'rgba(255,255,255,1)');
+    grad.addColorStop(0.45, 'rgba(255,255,255,0.85)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = grad;
+    g.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(c);
+  }
+
+  const state = new Float32Array(shapes[0].p);
+  const display = new Float32Array(N * 3);
+  const colorState = new Float32Array(N * 3);
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.BufferAttribute(display, 3));
+  geometry.setAttribute('color', new THREE.BufferAttribute(colorState, 3));
+  const material = new THREE.PointsMaterial({
+    size: 0.07,
+    map: spriteTexture(),
+    vertexColors: true,
+    transparent: true,
+    depthWrite: false,
+    sizeAttenuation: true
+  });
+  const points = new THREE.Points(geometry, material);
+  scene.add(points);
+
+  // Colores por figura según el tema
+  let shapeColors = [];
+  function readPalette() {
+    const cs = getComputedStyle(root);
+    const get = n => new THREE.Color(cs.getPropertyValue(n).trim() || '#888888');
+    return [get('--pt-dim'), get('--pt-cool'), get('--pt-warm'), get('--pt-peak')];
+  }
+  function isDark() {
+    const t = root.getAttribute('data-theme');
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function buildColors() {
+    const pal = readPalette();
+    const tmp = new THREE.Color();
+    shapeColors = shapes.map(s => {
+      const arr = new Float32Array(N * 3);
+      for (let i = 0; i < N; i++) {
+        const k = s.tone[i];
+        const lo = Math.floor(k), hi = Math.min(3, lo + 1);
+        tmp.copy(pal[lo]).lerp(pal[hi], k - lo);
+        arr[i * 3] = tmp.r; arr[i * 3 + 1] = tmp.g; arr[i * 3 + 2] = tmp.b;
+      }
+      return arr;
+    });
+    const dark = isDark();
+    material.blending = dark ? THREE.AdditiveBlending : THREE.NormalBlending;
+    material.opacity = dark ? 0.9 : 0.8;
+    material.needsUpdate = true;
+  }
+  buildColors();
+  colorState.set(shapeColors[0]);
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', buildColors);
+  new MutationObserver(buildColors).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+
+  function resize() {
+    const w = window.innerWidth, h = window.innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    if (w > 900) camera.setViewOffset(w, h, -w * 0.2, 0, w, h);
+    else camera.setViewOffset(w, h, 0, h * 0.24, w, h);
+    camera.updateProjectionMatrix();
+    material.size = w > 900 ? 0.07 : 0.085;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  let mx = 0, my = 0, pmx = 0, pmy = 0;
+  window.addEventListener('pointermove', e => {
+    mx = (e.clientX / window.innerWidth) * 2 - 1;
+    my = (e.clientY / window.innerHeight) * 2 - 1;
+  }, { passive: true });
+
+  const start = performance.now();
+  let angle = 0, elev = views[0].elev, dist = views[0].dist;
+
+  let last = performance.now();
+  function frame(now) {
+    const reduce = reduceMotion.matches;
+    const dt = Math.min(0.1, (now - last) / 1000);
+    last = now;
+    const f = sectionFloat();
+    const i0 = Math.floor(f), i1 = Math.min(shapes.length - 1, i0 + 1), t = f - i0;
+    setActive(Math.round(f));
+
+    const A = shapes[i0].p, B = shapes[i1].p;
+    const CA = shapeColors[i0], CB = shapeColors[i1];
+    const k = reduce ? 1 : 1 - Math.exp(-dt * 4.5);
+
+    const intro = reduce ? 1 : Math.min(1, (now - start) / 2600);
+    const ease = 1 - Math.pow(1 - intro, 3);
+
+    for (let j = 0; j < N * 3; j++) {
+      const target = A[j] + (B[j] - A[j]) * t;
+      state[j] += (target - state[j]) * k;
+      const ct = CA[j] + (CB[j] - CA[j]) * t;
+      colorState[j] += (ct - colorState[j]) * k;
+    }
+    for (let j = 0; j < N; j++) {
+      const o = j * 3;
+      display[o] = state[o];
+      display[o + 2] = state[o + 2];
+      display[o + 1] = FLOOR + (state[o + 1] - FLOOR) * ease;
+    }
+    geometry.attributes.position.needsUpdate = true;
+    geometry.attributes.color.needsUpdate = true;
+
+    const va = views[i0], vb = views[i1];
+    const tSpin = va.spin + (vb.spin - va.spin) * t;
+    const tElev = va.elev + (vb.elev - va.elev) * t;
+    const tDist = va.dist + (vb.dist - va.dist) * t;
+    pmx += (mx - pmx) * 0.05; pmy += (my - pmy) * 0.05;
+    const drift = reduce ? 0 : (now - start) * 0.00004;
+    const tAngle = tSpin + drift + (reduce ? 0 : pmx * 0.22);
+    const kc = reduce ? 1 : 1 - Math.exp(-dt * 3.5);
+    angle += (tAngle - angle) * kc;
+    elev += (tElev + (reduce ? 0 : pmy * 0.08) - elev) * kc;
+    dist += (tDist - dist) * kc;
+
+    camera.position.set(
+      Math.sin(angle) * Math.cos(elev) * dist,
+      Math.sin(elev) * dist,
+      Math.cos(angle) * Math.cos(elev) * dist
+    );
+    camera.lookAt(0, 0.1, 0);
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
