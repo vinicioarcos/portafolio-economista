@@ -1,4 +1,4 @@
-# Sitio web de Edwin Vinicio Arcos
+# Sitio web de Vinicio Arcos-Naranjo
 
 Página estática con una escena 3D (three.js) que cambia de figura con el scroll.
 
