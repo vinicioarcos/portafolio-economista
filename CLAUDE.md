@@ -1,7 +1,7 @@
 # CLAUDE
 
 ## Contexto del proyecto
-Este repositorio contiene el sitio web estatico de Edwin Vinicio Arcos, economista: un unico `index.html` (HTML, CSS y JavaScript) con una escena 3D en three.js que cambia de figura con el scroll. Se despliega en Vercel sin paso de compilacion (`vercel.json`).
+Este repositorio contiene el sitio web estatico de Edwin Vinicio Arcos, economista: un unico `index.html` (HTML, CSS y JavaScript) con una escena 3D en three.js que cambia de figura con el scroll. Se despliega en Vercel sin paso de compilacion (`vercel.json`). El contenido esta en ingles en el HTML, con la version en espanol en el diccionario `ES` del primer bloque `<script>` y un boton de idioma en la navegacion; ver README.
 
 La version anterior en Next.js se conserva en la rama `respaldo-nextjs`.
 
